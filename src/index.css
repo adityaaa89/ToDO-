@@ -1,0 +1,171 @@
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #111111;
+  --primary: #ffff00;
+  --secondary: #ff00ff;
+  --tertiary: #00ffff;
+  --border-color: #111111;
+  --border-width: 4px;
+  --shadow: 8px 8px 0px var(--border-color);
+  --shadow-hover: 12px 12px 0px var(--border-color);
+  --font-main: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-headings: 'Space Grotesk', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  background-image: radial-gradient(#d0d0d0 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.brutalist-card {
+  background: white;
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: all 0.2s ease;
+}
+
+.brutalist-input {
+  width: 100%;
+  padding: 0.75rem;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  border: var(--border-width) solid var(--border-color);
+  background: white;
+  outline: none;
+  font-weight: 600;
+}
+
+.brutalist-input:focus {
+  background: var(--tertiary);
+  box-shadow: inset 4px 4px 0px rgba(0,0,0,0.1);
+}
+
+.brutalist-button {
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-main);
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--text-color);
+  background: var(--primary);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.brutalist-button:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.brutalist-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--border-color);
+}
+
+/* Specific utilities */
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+.mt-4 { margin-top: 1rem; }
+.mb-4 { margin-bottom: 1rem; }
+.w-full { width: 100%; }
+.text-2xl { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; }
+.text-3xl { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; }
+
+.header {
+  background: var(--primary);
+  padding: 1rem;
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: white;
+  border: var(--border-width) solid var(--border-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 4px 4px 0px var(--border-color);
+  transition: all 0.2s;
+}
+
+.task-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--border-color);
+}
+
+.task-item.completed {
+  opacity: 0.7;
+  background: #e0e0e0;
+}
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--border-color);
+  background: var(--tertiary);
+  text-transform: uppercase;
+}
+
+.priority-badge {
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--border-color);
+  text-transform: uppercase;
+}
+.priority-Low { background: #00ff00; }
+.priority-Medium { background: #ffff00; }
+.priority-High { background: #ffaa00; }
+.priority-Urgent { background: #ff00ff; color: white; }
+
+/* Filter bar styles */
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  padding: 0.5rem;
+  border: var(--border-width) solid var(--border-color);
+  font-family: var(--font-main);
+  font-weight: bold;
+  background: white;
+  box-shadow: 4px 4px 0px var(--border-color);
+  outline: none;
+}
